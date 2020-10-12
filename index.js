@@ -1,4 +1,4 @@
-const axios = require("axios");
+
 let searchButton = document.querySelector("button");
 searchButton.addEventListener("click", withprompt);
 let searchForm = document.querySelector("form");
