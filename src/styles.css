@@ -1,0 +1,59 @@
+.weatherApp {
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+}
+.par {
+  color: rgba(131, 128, 128, 0.966);
+  padding: 20px;
+  margin: 0;
+  font-size: 10px;
+}
+
+.tomorrow {
+  display: block;
+  padding: 0px 30px 30px 10px;
+}
+
+.currently {
+  padding: 30px 30px 30px 10px;
+  margin: 0 auto;
+  display: block;
+  font: bolder;
+  font-size: 20px;
+  color: #7e57c2;
+}
+img {
+  color: #00e5ff;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.cur {
+  color: rgba(47, 13, 236, 0.932);
+  font: bold;
+  padding: 0;
+}
+
+.day {
+  color: #90a4ae;
+}
+
+.first {
+  color: #546e7a;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+button {
+  border-color: cornsilk;
+}
+.weatherApp {
+  display: block;
+  border-color: darkblue;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid rgb(101, 101, 165);
+}
