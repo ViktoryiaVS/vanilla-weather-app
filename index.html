@@ -13,97 +13,54 @@
   </head>
 
   <body>
-      
-      
-    <div class="container weatherApp">
+    <div class="container weatherApp"> 
 
-      <div class="container par">
-        <div class="row">
-          <div class="col">Moscow</div>
-          <div class="col">Paris</div>
-          <div class="col">Minsk</div>
-          <div class="col">Berlin</div>
-          <div class="col">New-York</div>
-          <div class="col">Tokyo</div>
-          <div class="col">Mexico</div>
-        </div>
-      </div>
-
-      <div class="container mytime">
-      <div class="row">
-          <h3>Time
-          </h3>
-        </div>
-      </div>
-
-      <div class="container search">
-        <div class="row">
-          <div class="col-8"><form>
+      <div class="row justify-content-center mytime">
+        Time
+          </div>
+    
+      <div class="row justify-content-center search">
+        <form>
             <input class="form-control" type="text" placeholder="City" id="searchInput"/>
-          </form></div>
-          <div class="col-2"> <button><img src="src/img/search-location-solid.svg" height="30px" color="grey" </img> </button></div>
+          </form>
         </div>
-        </div>
-        
-      <div class="container currently">
-        <div class="row">
-        <div class="col-3 first">
-          <h5 id="current-city">
+  
+        <div class="row justify-content-center current-city">
           Currently:
-          </h5>
           </div>
-          <div class="col-3 currentWeather">
-            <div class="temperature"></div><img class="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png" height="54px"></img>
+
+          <div class="row justify-content-center currentWeather">
+
+            <div class="col-5 d-flex justify-content-end">
+            <img class="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png" height="130px"></img>
           </div>
-            <div class="col-3">1%</div>
-            <div class="col-3">5m/s</div>
-      </div>
+
+           <div class="col-5 d-flex justify-content-start ">
+          <ul>
+            <li class="temperature">C|F</li>
+            <li class="humidity">Humidity: 1%</li>
+            <li class="windspeed">Wind speed: 5m/s</li>
+          </ul>
+        </div>
+
+          </div>
+
+        
+        <div class="row justify-content-center tomorrow">Tomorrow</div> 
+
+        <div class="row justify-content-center weatherTomorrow">19℃</div>
+
+        <div class="row justify-content-center"><img class="tomorrowweatherIcon" src="src/img/cloud-sun-solid.svg" height="14px"></img></div>
+        </br>
+        <small>
+          <a
+          href="https://github.com/ViktoryiaVS/vanilla-weather-app.git"
+          >coded by VSamsonava </a>
+        </small>
       </div>
       
-
-      <div class="container tomorrow">
-        
-      <div class="row">
-        <div class="col-3">
-          <ul class="day">
-            <li class="first">Tomorrow</li>
-            <li>19℃ <img src="src/img/cloud-sun-solid.svg" height="14px"></img></li>
-            <li>4%</li>
-            <li>2m/s</li>
-          </ul>
-        </div>
-        
-        <div class="col-3">
-          <ul class="day">
-            <li class="first">09/11</li>
-            <li>31℃ <img src="src/img/sun-solid.svg" height="14px"></li></img></li>
-            <li>1%</li>
-            <li>5m/s</li>
-          </ul>
-        </div>
-
-        <div class="col-3">
-          <ul class="day">
-            <li class="first">09/12</li>
-            <li>25℃ <img src="src/img/cloud-sun-solid.svg" height="14px"></img></i></li>
-            <li>7%</li>
-            <li>10m/s</li>
-          </ul>
-        </div>
-
-        <div class="col-3">
-          <ul class="day">
-            <li class="first">09/13</li>
-            <li>17℃ <img src="src/img/moon-solid.svg" height="14px"></img></li>
-            <li>10%</li>
-            <li>5m/s</li>
-          </ul>
-          </div>
-        
-      </div>
-    </div>
-
-    </div>
+   
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

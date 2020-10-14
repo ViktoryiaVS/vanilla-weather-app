@@ -46,7 +46,7 @@ function process(response) {
   weatherIcon.src = newIcon;
   console.log(weatherIcon);
 
-  let time = document.querySelector("h3");
+  let time = document.querySelector("mytime");
   time.innerHTML = formatDate();
 }
 
@@ -57,5 +57,6 @@ function formatDate() {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[myDate.getDay()];
   let returnDate = `${day} ${timeHour}:${timeMin}`;
+
   return returnDate;
 }
