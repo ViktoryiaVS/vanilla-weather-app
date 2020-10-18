@@ -79,6 +79,12 @@ function weatherCity(city) {
   let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${getUnits()}`;
 
   axios.get(weatherUrl).then(process);
+
+  let weatherForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${getUnits()}`;
+
+  axios.get(weatherForecastUrl).then(forecast);
+
+
 }
 
 function toTitleCase(str) {
@@ -135,4 +141,26 @@ function process(response) {
 
   let time = document.querySelector(".asoftime");
   time.innerHTML = "as of  " + new Date().toLocaleString(options);
+}
+
+
+function forecast(response) {
+  console.log(response);
+  let  list = response.data.list;
+
+  for(i = 0; i < list.length-8; i=i+8) {
+    let cssday=".day"+(i/8+1);
+    
+    document.querySelector(cssday+" .asof").textContent=`${list[i].dt_txt}`;
+
+    document.querySelector(cssday+" .temp").textContent=`${list[i].main.temp}${getUnit()}`;
+
+    document.querySelector(cssday+" .icon").innerHTML='<img class="weatherIcon" src="http://openweathermap.org/img/wn/'
+    +`${list[i].weather[0].icon}`
+    +'@2x.png" height="50px"></img>';
+
+
+
+  }
+
 }

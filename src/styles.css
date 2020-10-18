@@ -8,8 +8,8 @@
   line-height: 20px;
   color: #333;
   background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
-  max-width: 450px;
-  min-width: 300px;
+  max-width: 520px;
+  min-width: 500px;
   border: 1px solid;
   border-radius: 3px;
   border-color: #fdafa8;
@@ -40,5 +40,5 @@ ul {
   font-size: 11px;
   text-align: left;
   list-style: none;
-  padding-top: 35px;
+  padding: 0px;
 }
