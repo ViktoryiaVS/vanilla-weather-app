@@ -8,10 +8,25 @@
   line-height: 20px;
   color: #333;
   background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
-  max-width: 300px;
-  min-width: 200px;
+  max-width: 450px;
+  min-width: 300px;
   border: 1px solid;
   border-radius: 3px;
+  border-color: #fdafa8;
+}
+
+.kpi {
+  font-size: 50px;
+}
+
+#unit-f {
+  color: gray;
+  font-weight: lighter;
+}
+
+#unit-c {
+  font-weight: bold;
+  color: black;
 }
 
 .mytime {
@@ -26,7 +41,4 @@ ul {
   text-align: left;
   list-style: none;
   padding-top: 35px;
-}
-.temperature {
-  font-size: 22px;
 }

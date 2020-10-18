@@ -1,62 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Parcel Sandbox</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/styles.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"/>
-      
+      <link rel="stylesheet" href="src/styles.css"/>
   </head>
 
   <body>
     <div class="container weatherApp"> 
 
-      <div class="row justify-content-center mytime">
-        Time
-          </div>
+      <div class="row mytime">
+      <div class="col-md text-left">
+        
+        <h5>Weather App </h5>
+      </div>
+      <div class="col-2 text-right unit-selector">
+        <span id="unit-c" class="units">°C</span><span id="unit-f" class="units">°F</span>
+      </div>
+      </div>
     
       <div class="row justify-content-center search">
         <form>
-            <input class="form-control" type="text" placeholder="City" id="searchInput"/>
+            <input class="form-control" type="text" placeholder="Enter City" aria-label="Enter City" id="searchInput"/>
           </form>
         </div>
-  
-        <div class="row justify-content-center current-city">
-          Currently:
-          </div>
 
-          <div class="row justify-content-center currentWeather">
-
-            <div class="col-5 d-flex justify-content-end">
-            <img class="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png" height="130px"></img>
-          </div>
-
-           <div class="col-5 d-flex justify-content-start ">
-          <ul>
-            <li class="temperature">C|F</li>
-            <li class="humidity">Humidity: 1%</li>
-            <li class="windspeed">Wind speed: 5m/s</li>
-          </ul>
+        <div class="row justify-content-center ">
+           <h2 class="current-city"></h2>
+           <p class="align-text-top asoftime">as of date</p>
         </div>
 
+
+        <div class="row justify-content-center currentWeather">
+
+          
+          <div class="col-md justify-content-center text-center">
+
+            
+                
+
+                <img class="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png" height="130px"></img>
+                <p class="temperature  kpi">122°C</p>
+                
+            </div>
+
+          <div class="col-md text-nowrap mt-3">
+
+            <div class="row">
+              <div class="col text-right px-2">Temperature:</div>
+              <div class="col text-left px-2 temperature">10</div>
+            </div>
+
+            <div class="row">
+              <div class="col text-right px-2">Feels like:</div>
+              <div class="col text-left px-2 feels-like">9</div>
+            </div>
+
+            <div class="row">
+              <div class="col text-right px-2">Humidity</div>
+              <div class="col text-left px-2 humidity">1</div>
+            </div>
+            
+            <div class="row">
+              <div class="col text-right px-2">Pressure</div>
+              <div class="col text-left px-2 pressure">1000</div>
+            </div>
+
           </div>
 
+          </div>
+        </div>
+
+
+      </br>
+      <small>
+        <a
+        href="https://github.com/ViktoryiaVS/vanilla-weather-app.git"
+        >coded by VSamsonava </a>
+      </small>
+      <h6  id="clock"></h6>
+
+  
         
-        <div class="row justify-content-center tomorrow">Tomorrow</div> 
 
-        <div class="row justify-content-center weatherTomorrow">19℃</div>
+     
+          
 
-        <div class="row justify-content-center"><img class="tomorrowweatherIcon" src="src/img/cloud-sun-solid.svg" height="14px"></img></div>
-        </br>
-        <small>
-          <a
-          href="https://github.com/ViktoryiaVS/vanilla-weather-app.git"
-          >coded by VSamsonava </a>
-        </small>
+  
+        
       </div>
       
    

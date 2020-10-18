@@ -1,10 +1,68 @@
 
-let searchButton = document.querySelector("button");
-searchButton.addEventListener("click", withprompt);
+    var clockElement = document.getElementById('clock');
+    var options={ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZoneName:'short'};
+
+    function clock() {
+        clockElement.textContent = new Date().toLocaleString(options);
+    }
+
+    clock();
+
+    setInterval(clock, 1000);
+
+
+
+var unit_C = "ºC"
+var unit_F = "ºF"
+var isCelsius=true;
+
+let unitCs = document.querySelector("#unit-c");
+let unitFs = document.querySelector("#unit-f");
+unitCs.addEventListener("click", clickC);
+unitFs.addEventListener("click", clickF);
+
+
+
+function clickC(event){
+  event.preventDefault();
+  if(!isCelsius){
+    console.log(unitCs);
+    unitCs.style.fontWeight="bold"
+    unitFs.style.fontWeight="lighter"
+    unitCs.style.color="black"
+    unitFs.style.color="gray"
+    isCelsius=true;
+    weatherCity(lastCity);
+  }
+  
+}
+
+
+function clickF(event){
+  event.preventDefault();
+  if(isCelsius){
+    console.log(unitFs);
+    unitFs.style.fontWeight="bold"
+    unitCs.style.fontWeight="lighter"
+    unitFs.style.color="black"
+    unitCs.style.color="gray"
+    isCelsius=false;
+    weatherCity(lastCity);
+    
+  }
+
+
+}
+
+
+
+
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", withprompt);
 
-weatherCity("Moscow");
+var lastCity="Moscow"
+
+weatherCity(lastCity);
 
 function withprompt(event) {
   event.preventDefault();
@@ -15,10 +73,10 @@ function withprompt(event) {
 }
 
 function weatherCity(city) {
-  let cityTitle = document.querySelector("#current-city");
-  cityTitle.innerHTML = "Currently in " + toTitleCase(city) + ":";
+  let cityTitle = document.querySelector(".current-city");
+  cityTitle.innerHTML = "The weather in " + toTitleCase(city);
   let apiKey = "3ae683693189f51a58a818582cf53045";
-  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${getUnits()}`;
 
   axios.get(weatherUrl).then(process);
 }
@@ -29,15 +87,44 @@ function toTitleCase(str) {
   });
 }
 
+
+
+
+function getUnit(){
+  if(isCelsius) {
+    return  unit_C;
+  }
+  return unit_F;
+}
+
+function getUnits(){
+  if(isCelsius) {
+    return "metric"
+  }
+  return "imperial"
+}
+
 function process(response) {
-  console.log(response);
+   console.log(response);
+  let temperatures = document.querySelectorAll(".currentWeather .temperature");
+  console.log(temperatures);
+  for(i = 0; i < temperatures.length; i++) {
+    temperatures[i].textContent = `${response.data.main.temp}`+ getUnit();
+  }
+  console.log(temperatures);
 
-  let currentWeather = document.querySelector(".currentWeather");
+  let feels_like = document.querySelector(".currentWeather .feels-like");
+  feels_like.textContent = `${response.data.main.feels_like}`+ getUnit();
 
-  let temperature = currentWeather.firstChild;
+  let humidity = document.querySelector(".currentWeather .humidity");
+  humidity.textContent = `${response.data.main.humidity}`;
+
+  let pressure = document.querySelector(".currentWeather .pressure");
+  pressure.textContent = `${response.data.main.pressure}`;
+
+
   let weatherIcon = document.querySelector(".currentWeather img");
-  console.log(weatherIcon);
-  temperature.textContent = `${response.data.main.temp}ºC`;
+
 
   let newIcon =
     "http://openweathermap.org/img/wn/" +
@@ -46,17 +133,6 @@ function process(response) {
   weatherIcon.src = newIcon;
   console.log(weatherIcon);
 
-  let time = document.querySelector("mytime");
-  time.innerHTML = formatDate();
-}
-
-function formatDate() {
-  let myDate = new Date();
-  let timeHour = myDate.getHours();
-  let timeMin = myDate.getMinutes();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let day = days[myDate.getDay()];
-  let returnDate = `${day} ${timeHour}:${timeMin}`;
-
-  return returnDate;
+  let time = document.querySelector(".asoftime");
+  time.innerHTML = "as of  " + new Date().toLocaleString(options);
 }
